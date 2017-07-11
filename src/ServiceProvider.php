@@ -1,6 +1,6 @@
 <?php
 
-namespace Algolia\ScoutMacros;
+namespace HolidayWatchdog\ScoutMacros;
 
 use Illuminate\Support\ServiceProvider as LaravelServiceProvider;
 
