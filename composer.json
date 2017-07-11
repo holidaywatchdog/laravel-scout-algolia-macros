@@ -15,6 +15,9 @@
         {
             "name": "Julien Bourdeau",
             "email": "support@algolia.com"
+        },{
+            "name": "Robert Norman",
+            "email": "rnorman@tripadvisor.com"
         }
     ],
     "minimum-stability": "stable",
@@ -23,13 +26,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Algolia\\ScoutMacros\\": "src"
+            "HolidayWatchdog\\ScoutMacros\\": "src"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "Algolia\\ScoutMacros\\ServiceProvider"
+                "HolidayWatchdog\\ScoutMacros\\ServiceProvider"
             ]
         }
     }
