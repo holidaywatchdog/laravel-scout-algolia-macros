@@ -1,5 +1,5 @@
 {
-    "name": "algolia/laravel-scout-algolia-macros",
+    "name": "holidaywatchdog/laravel-scout-algolia-macros",
     "description": "A collection macros to extend Laravel Scout with more Algolia capabilities",
     "keywords": [
         "algolia",
@@ -9,7 +9,7 @@
         "search"
     ],
     "type": "library",
-    "homepage": "https://github.com/algolia/laravel-scout-algolia-macros",
+    "homepage": "https://github.com/holidaywatchdog/laravel-scout-algolia-macros",
     "license": "MIT",
     "authors": [
         {
