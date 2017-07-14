@@ -49,7 +49,7 @@ if (! Builder::hasMacro('aroundLatLng')) {
     });
 }
 
-if (! Builder::hasMacro('withOpts')) {
+if (! Builder::hasMacro('with')) {
     /**
      * Override the algolia search options to give you full control over the request,
      * similar to official algolia-laravel package.
@@ -60,7 +60,7 @@ if (! Builder::hasMacro('withOpts')) {
      *
      * @return Laravel\Scout\Builder
      */
-    Builder::macro('withOpts', function ($opts) {
+    Builder::macro('with', function ($opts) {
         $callback = $this->callback;
 
         $this->callback = function ($algolia, $query, $options) use ($opts, $callback) {
