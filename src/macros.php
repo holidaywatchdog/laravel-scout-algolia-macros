@@ -1,6 +1,7 @@
 <?php
 
 use Laravel\Scout\Builder;
+use Illuminate\Database\Eloquent\Collection;
 
 
 if (! Builder::hasMacro('count')) {
@@ -81,3 +82,31 @@ if (! Builder::hasMacro('with')) {
         return $this;
     });
 }
+
+if (! Builder::hasMacro('hydrate')) {
+    /**
+     * get() hydrates records by looking up the Ids in the corresponding database
+     * This macro uses the data returned from the search results to hydrate
+     *  the models and return a collection
+     *
+     * @return Collection
+     */
+    Builder::macro('hydrate', function () {
+        $results = $this->engine()->search($this);
+
+        if (count($results['hits']) === 0) {
+            return Collection::make();
+        }
+
+        $hits = collect($results['hits']);
+        $className = get_class($this->model);
+        $models = new Collection();
+
+        $hits->each(function($item, $key) use ($className, $models) {
+            $models->push(new $className($item));
+        });
+
+        return $models;
+    });
+}
+
