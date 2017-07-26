@@ -102,9 +102,13 @@ if (! Builder::hasMacro('hydrate')) {
         $className = get_class($this->model);
         $models = new Collection();
 
+        Eloquent::unguard();
+
         $hits->each(function($item, $key) use ($className, $models) {
             $models->push(new $className($item));
         });
+
+        Eloquent::reguard();
 
         return $models;
     });
